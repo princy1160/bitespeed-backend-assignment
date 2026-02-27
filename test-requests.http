@@ -1,3 +1,11 @@
+##Live Check
+
+
+### Identify - Live API
+curl -X POST https://identity-reconciliation-api-vwtg.onrender.com/identify \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@example.com","phoneNumber":"123456"}'
+
 ### Health Check
 GET http://localhost:3000/health
 

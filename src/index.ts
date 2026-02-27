@@ -14,6 +14,33 @@ app.use(cors());
 app.use(express.json());
 
 const contactService = new ContactService();
+
+app.get('/', (req: Request, res: Response) => {
+  res.json({
+    name: 'Identity Reconciliation API',
+    version: '1.0.0',
+    description: 'Bitespeed Backend Assignment - Contact identity reconciliation service',
+    endpoints: {
+      health: {
+        method: 'GET',
+        path: '/health',
+        description: 'Health check endpoint'
+      },
+      identify: {
+        method: 'POST',
+        path: '/identify',
+        description: 'Identify and consolidate contact information',
+        body: {
+          email: 'string (optional)',
+          phoneNumber: 'string (optional)'
+        },
+        note: 'At least one field is required'
+      }
+    },
+    repository: 'https://github.com/princy1160/bitespeed-backend-assignment'
+  });
+});
+
 app.get('/health', (req: Request, res: Response) => {
   res.json({ status: 'OK', message: 'Identity Reconciliation Service is running' });
 });
