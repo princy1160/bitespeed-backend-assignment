@@ -1,0 +1,45 @@
+### Health Check
+GET http://localhost:3000/health
+
+### Identify - New Customer
+POST http://localhost:3000/identify
+Content-Type: application/json
+
+{
+  "email": "lorraine@hillvalley.edu",
+  "phoneNumber": "123456"
+}
+
+### Identify - Returning Customer with New Email
+POST http://localhost:3000/identify
+Content-Type: application/json
+
+{
+  "email": "mcfly@hillvalley.edu",
+  "phoneNumber": "123456"
+}
+
+### Identify - Link Two Primary Contacts
+POST http://localhost:3000/identify
+Content-Type: application/json
+
+{
+  "email": "george@hillvalley.edu",
+  "phoneNumber": "717171"
+}
+
+### Identify - Only Email
+POST http://localhost:3000/identify
+Content-Type: application/json
+
+{
+  "email": "doc@hillvalley.edu"
+}
+
+### Identify - Only Phone
+POST http://localhost:3000/identify
+Content-Type: application/json
+
+{
+  "phoneNumber": "555555"
+}
