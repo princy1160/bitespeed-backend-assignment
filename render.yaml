@@ -1,21 +1,18 @@
 services:
   # PostgreSQL Database
-  - type: pserv
+  - type: postgres
     name: identity-reconciliation-db
-    env: docker
+    databaseName: identity_db
     plan: free
     region: oregon
-    databases:
-      - name: identity_db
-        user: identity_user
 
   # Web Service
   - type: web
     name: identity-reconciliation-api
-    env: node
+    runtime: node
     plan: free
     region: oregon
-    buildCommand: npm install && npm run build && npm run init-db
+    buildCommand: npm install && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
