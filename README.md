@@ -4,6 +4,20 @@ Identity reconciliation service that tracks customer contacts across multiple pu
 
 **Live API**: https://identity-reconciliation-api-vwtg.onrender.com
 
+## Live API Testing
+
+Health Check:
+```bash
+GET https://identity-reconciliation-api-vwtg.onrender.com/health
+```
+
+Identify Endpoint:
+```bash
+curl -X POST https://identity-reconciliation-api-vwtg.onrender.com/identify \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@example.com","phoneNumber":"123456"}'
+```
+
 ## Tech Stack
 - Node.js + TypeScript
 - Express.js
