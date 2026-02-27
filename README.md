@@ -8,7 +8,7 @@ Identity reconciliation service that tracks customer contacts across multiple pu
 
 Health Check:
 ```bash
-GET https://identity-reconciliation-api-vwtg.onrender.com/health
+curl https://identity-reconciliation-api-vwtg.onrender.com/health
 ```
 
 Identify Endpoint:
