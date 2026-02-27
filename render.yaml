@@ -1,39 +1,7 @@
 services:
-  # PostgreSQL Database
-  - type: postgres
-    name: identity-reconciliation-db
-    databaseName: identity_db
-    plan: free
-    region: oregon
-
-  # Web Service
   - type: web
     name: identity-reconciliation-api
     runtime: node
     plan: free
-    region: oregon
     buildCommand: npm install && npm run build
     startCommand: npm start
-    envVars:
-      - key: NODE_ENV
-        value: production
-      - key: DB_HOST
-        fromDatabase:
-          name: identity-reconciliation-db
-          property: host
-      - key: DB_PORT
-        fromDatabase:
-          name: identity-reconciliation-db
-          property: port
-      - key: DB_NAME
-        fromDatabase:
-          name: identity-reconciliation-db
-          property: database
-      - key: DB_USER
-        fromDatabase:
-          name: identity-reconciliation-db
-          property: user
-      - key: DB_PASSWORD
-        fromDatabase:
-          name: identity-reconciliation-db
-          property: password
